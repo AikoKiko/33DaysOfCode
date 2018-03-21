@@ -1,32 +1,33 @@
-import java.lang.reflect.Array;
-// needTobefinished and checked 
+
+
 public class WineCollection {
-	Integer[] wineArray;
-	int start;
-	int end;
-	
-	public WineCollection(Integer[] wineArray,int start, int end) {
+	int[] wineArray;
+	void initialConditions(int[] wineArray) {
+		int start=0;
+		int end=wineArray.length-1;
 		this.wineArray=wineArray;
-		this.start=start;
-		this.end=end;
-	}	
-void maxProfit(int ithWine, int year, int profit) {
-	if(ithWine<0 || ithWine>= wineArray.length) {
-		System.out.println("MaxProfit is " + profit);
-	} 
-	else {
-	int price= year*wineArray[ithWine];
-	year++;
-	start++;
-	end--;
-	maxProfit(start,year, profit+price);
-	maxProfit(end, year, profit+price);
+		maxProfit(1,0,start,end);
+		
 	}
-}
+void maxProfit(int year,int profit,int start, int end) {
+	  if(start>end) {
+		  System.out.println(profit);
+	  }
+	  else {
+	  year++;
+	  maxProfit(year,profit+wineArray[start]*year,start+1, end);
+	  maxProfit(year, profit+wineArray[end]*year,start, end-1);
+	  }
+	}
+
 
 public static void main(String args[]) {
 	
+	int[] array = new int[]{1,2,3,4,5,6,7,8,9,10};
+	          
+	WineCollection c = new WineCollection();
+	c.initialConditions(array);
 	
-	WineCollection c = new WineCollection(array, 0, Array.get)
 }
 }
+
