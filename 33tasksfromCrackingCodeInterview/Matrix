@@ -1,0 +1,44 @@
+
+public class Matrix {
+
+	static int[][] arrturned;
+	public Matrix(int[][] arr) {
+		arrturned =new int[arr.length][arr.length];
+	}
+	
+	public void turnMatrix (int[][] arr, int m) {
+		
+		for(int i=m, j=arr.length-m-1; i<arr.length-m & j>=m; i++, j--) {
+			arrturned[i][m]=arr[m][j];
+			arrturned[arr.length-m-1][i]=arr[i][m];
+			arrturned[i][arr.length-m-1]=arr[arr.length-m-1][j];
+			arrturned[m][i]=arr[i][arr.length-m-1];
+		}
+	}
+	
+	public static void main(String[] args) {
+		int arr[][]={{1,2,3,4,5,6},
+				     {7,8,9,6,6,5},
+				     {8,6,7,3,2,1},
+				     {7,9,11,10,8,7},
+				     {4,5,6,7,9,10},
+				     {5,6,7,8,11,20}}; 
+		Matrix matrix = new Matrix(arr);
+		for (int i=0; i< arr.length/2; i++) {
+			matrix.turnMatrix(arr, i);	
+		}
+		for (int i = 0; i < arr.length; i++) {
+	        for (int j = 0; j<arr.length; j++)
+	        { 
+	        	if(i==0) {
+	        		 System.out.print(arrturned[i][j] + "\t");
+	               } else {
+	       System.out.print(arrturned[i][j] + "\t");
+	               }
+	        }
+	       System.out.print("\n");
+	    }
+		
+	}
+	
+}
