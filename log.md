@@ -6,4 +6,7 @@
 - Wine Collection StackOverflow task
 # Day 4:
 - Image turn on 90 degree Data Structure task
-
+# Day 5:
+- ChessQueen task start the task and think about realization
+# Day 6:
+- ChessQueen write the code at last "~_~"
