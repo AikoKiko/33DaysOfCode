@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+
+public class ChessQueen {
+	static int numberOfSolutions = 0;
+	int grid=8;
+	void placeQueens (int row, Integer[] columns, ArrayList<Integer[]> solutions) { // !!! for every case there will be created onject F.E: row =4; 
+		                                        // columns soderjat prededuwie znachwnya dlya 0 do 3 rows, kajdy row imeet 8 possibilities, i na 8 possibilities, there will be
+		 // again 8 possibilitis, and for each of them object will be created
+		if(row==grid) {
+			numberOfSolutions++;
+			solutions.add(columns.clone());
+		} else {
+			for(int i=0; i<grid; i++) {
+				if(checkGrid(row, i, columns)) {
+					columns[row]=i;
+					placeQueens(row+1, columns, solutions );
+				}
+			}
+		}
+	}
+	boolean checkGrid(int row, int column, Integer[] columns) {
+		for(int j=0; j<row; j++) {
+			if(columns[j]==column) {
+				return false;
+			}
+			if(Math.abs(column-columns[j])==(row-j)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	public static void main(String[] args) {
+		ChessQueen c= new ChessQueen();
+		c.placeQueens(0, new Integer[8], new ArrayList<Integer[]>());
+		System.out.println(numberOfSolutions);
+	}
+}
