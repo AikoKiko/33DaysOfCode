@@ -9,4 +9,6 @@
 # Day 5:
 - ChessQueen task start the task and think about realization
 # Day 6:
-- ChessQueen write the code at last "~_~"
+- ChessQueen wrote the code at last "~_~"
+# Day 7:
+- Start of RemoveNthNode from LeetCode
