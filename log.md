@@ -12,3 +12,7 @@
 - ChessQueen wrote the code at last "~_~"
 # Day 7:
 - Start of RemoveNthNode from LeetCode
+# Day 8:
+- Continue working on RemoveNthNode from LeetCode
+# Day 7:
+- Continue working on RemoveNthNode from LeetCode
