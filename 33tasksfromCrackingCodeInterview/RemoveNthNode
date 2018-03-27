@@ -1,6 +1,33 @@
-//Remove Nth Node From End of List
-class Solution {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        
-    }
+import java.util.LinkedList;
+
+public class SolutionLinkedList {
+	
+	 public class ListNode {
+	      int val;
+	      ListNode next;
+	      ListNode(int x) { val = x; }
+	  }
+	 public class LinkedList {
+     public ListNode firstNode;
+     LinkedList() {
+			 firstNode = null;
+		 }
+		 
+		 public ListNode removeNthFromEnd(ListNode head, int n) {
+	    	   int i=0;
+	    	   while(currentNode.next!=null) {
+	    		   
+	    		   previousNode=currentNode;
+	    		   currentNode=head.next;
+	    		   
+	    	   }
+	    	   
+	    	   
+	    } 
+	 }
+       public static void main(String[] args) {
+    	  
+    	 
+       }
 }
+
