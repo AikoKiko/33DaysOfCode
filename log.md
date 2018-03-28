@@ -16,3 +16,5 @@
 - Continue working on RemoveNthNode from LeetCode
 # Day 7:
 - Continue working on RemoveNthNode from LeetCode
+# Day 8:
+- Finished working on RemoveNthNode from LeetCode
