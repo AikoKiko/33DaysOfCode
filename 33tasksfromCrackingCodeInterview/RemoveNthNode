@@ -1,34 +1,60 @@
-//not finished yet
-import java.util.LinkedList;
+
 
 public class SolutionLinkedList {
 	
-	 public class ListNode {
-	      int val;
-	      ListNode next;
-	      ListNode(int x) { val = x; }
-	  }
-	 public class LinkedList {
-     public ListNode firstNode;
-     LinkedList() {
-			 firstNode = null;
-		 }
-		 
-		 public ListNode removeNthFromEnd(ListNode head, int n) {
-	    	   int i=0;
-	    	   while(currentNode.next!=null) {
-	    		   
-	    		   previousNode=currentNode;
-	    		   currentNode=head.next;
-	    		   
-	    	   }
-	    	   
-	    	   
-	    } 
-	 }
        public static void main(String[] args) {
-    	  
-    	 
+    	 LinkList list = new LinkList();
+    	 list.add(6);
+    	 list.add(5);
+    	 list.add(4);
+    	 list.add(3);
+    	 list.add(2);
+    	 list.add(1);
+    	 ListNode answer= list.removeNthFromEnd(list.getFirstNode(), 5);
+    	System.out.println(answer.val);
+    	System.out.println(answer.next.val);
        }
 }
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) { val = x; }
+}
+
+class LinkList {
+    private ListNode firstNode;
+    LinkList() {
+			 setFirstNode(null);
+		 }
+		 
+    public void add(int x) {
+   	ListNode node =new ListNode(x);
+   	 
+   		node.next=getFirstNode();
+   		setFirstNode(node);
+    }
+		 public ListNode removeNthFromEnd(ListNode head, int n) {
+	    	   ListNode first = head;
+	    	   ListNode second=head;
+	    	   for (int i=0;i<=n; i++) {
+	    		   second = second.next;
+	    	   }
+	    	   while(second!=null) {
+	    		   first = first.next;
+	    		   second=second.next;
+	    	   }
+	    	   first.next=first.next.next;
+	    	   
+	    	   return first;
+	    	   
+	    }
+
+		public ListNode getFirstNode() {
+			return firstNode;
+		}
+
+		public void setFirstNode(ListNode firstNode) {
+			this.firstNode = firstNode;
+		} 
+	 }
 
