@@ -18,3 +18,7 @@
 - Continue working on RemoveNthNode from LeetCode
 # Day 8:
 - Finished working on RemoveNthNode from LeetCode
+# Day 9:
+- Start of Stack of Boxes
+# Day 10
+- Continuing work on it
