@@ -1,0 +1,78 @@
+
+
+public class SolutionLinkedList {
+	
+       public static void main(String[] args) {
+    	 LinkList list = new LinkList();
+    	 list.add(3);
+    	 list.add(4);
+    	 list.add(4);
+    	 list.add(8);
+    	 list.add(1);
+    	 list.add(1);
+    	 list.deleteDuplicates(list.getFirstNode());
+         System.out.println(list.display(list.getFirstNode()));
+       }
+}
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) { val = x; }
+}
+
+class LinkList {
+    private ListNode firstNode;
+    LinkList() {
+			 setFirstNode(null);
+		 }
+		 
+    public void add(int x) {
+   	ListNode node =new ListNode(x);
+   	 
+   		node.next=getFirstNode();
+   		setFirstNode(node);
+    }
+		 public ListNode removeNthFromEnd(ListNode head, int n) {
+	    	   ListNode first = head;
+	    	   ListNode second=head;
+	    	   for (int i=0;i<=n; i++) {
+	    		   second = second.next;
+	    	   }
+	    	   while(second!=null) {
+	    		   first = first.next;
+	    		   second=second.next;
+	    	   }
+	    	   first.next=first.next.next;
+	    	   
+	    	   return first.next;
+	    	   
+	    }
+
+		 public void deleteDuplicates(ListNode head) {
+			  ListNode first = head;
+	    	  while(first.next!=null) {
+	    		  if(first.val==first.next.val) {
+	    			  first.next=first.next.next;
+	    		  }
+	    		  first=first.next;
+	    	  }
+	    	  
+	    }
+		public ListNode getFirstNode() {
+			return firstNode;
+		}
+
+		public void setFirstNode(ListNode firstNode) {
+			this.firstNode = firstNode;
+		} 
+		
+		public String display(ListNode node) {
+			System.out.println("I gonna print");
+			String sentence = node.val + "-";
+			while(node.next!=null) {
+	    		  sentence=sentence+node.next.val+"-";
+	    		  node=node.next;
+	    		  }
+			return sentence;
+		}
+	 }
