@@ -4,10 +4,11 @@ public class SolutionLinkedList {
 	
        public static void main(String[] args) {
     	 LinkList list = new LinkList();
+    	 list.add(4);
+    	 list.add(4);
+    	 list.add(7);
     	 list.add(3);
-    	 list.add(4);
-    	 list.add(4);
-    	 list.add(8);
+    	 list.add(1);
     	 list.add(1);
     	 list.add(1);
     	 list.deleteDuplicates(list.getFirstNode());
@@ -50,8 +51,13 @@ class LinkList {
 
 		 public void deleteDuplicates(ListNode head) {
 			  ListNode first = head;
-	    	  while(first.next!=null) {
+			  ListNode second= head;
+	    	  while(first!=null) {
+	    		  if(second.val==first.val){
+	    			  first=second;
+	    		  }
 	    		  if(first.val==first.next.val) {
+	    			  second = first;
 	    			  first.next=first.next.next;
 	    		  }
 	    		  first=first.next;
@@ -76,3 +82,4 @@ class LinkList {
 			return sentence;
 		}
 	 }
+
