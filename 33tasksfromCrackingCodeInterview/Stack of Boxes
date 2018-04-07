@@ -1,1 +1,57 @@
 //Dynamic Programminng task from Cracking Code Interview
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class stackBoxes {
+
+	ArrayList<Box> stack = new ArrayList<Box>();
+	
+	public stackBoxes() {
+		Collections.sort(stack, new SortBox());
+	}
+	
+   public void implement(ArrayList<Box> solution, Box insertBox, int size, int hold) {
+	   int index1 = stack.indexOf(insertBox);
+	   int index2 =stack.indexOf(solution.get(size-1)); ///bukilin izde iwinde bar bolatyn bolsa koi iwine 
+	  if(index1>index2) {
+		  solution.add(insertBox);
+		  size++;
+	  }
+	  for(int i=hold+1; i<stack.size(); i++) {
+      
+		  implement(solution, stack.get(i),size,hold+1);
+	  }
+   }
+}
+
+
+
+
+
+
+class Box {
+	int w;
+	private int h;
+	int d;
+	Box(int w, int h, int d) {
+		this.w=w;
+		this.setH(h); 
+		this.d=d;
+	}
+	int getH() {
+		return h;
+	}
+	void setH(int h) {
+		this.h = h;
+	}
+}
+
+class SortBox implements Comparator<Box> {
+
+	@Override
+	public int compare(Box b1, Box b2) {
+		return b2.getH()-b1.getH();
+	}
+	
+}
