@@ -22,9 +22,11 @@
 - Start of Stack of Boxes
 # Day 10
 - Continuing work on it
-# Day 11,12,13:
+# Day 11-13:
 - Finished working on RemoveDuplicates from LeetCode
 # Day 14,15,16.17:
-- Missed the challenge days
-# Day 18,19,20:
+- Missed the challenge days for submission
+# Day 18-20:
 - Finished Stack of Boxes(Dynamic Programming), but need to be done optimization
+# Day 20-24:
+-Optimization of Stack of Boxes
